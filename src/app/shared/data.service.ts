@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subreddit } from '../subreddit/subreddit.model';
 import { SubredditService } from '../subreddit/subreddit.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class DataService{
@@ -10,7 +11,7 @@ export class DataService{
 
     fetchReddits(subreddit: string){
         this.http
-        .get<Subreddit[]>('https://subreddit-api-dg.herokuapp.com/api/v1/subreddits/' + subreddit)
+        .get<Subreddit[]>(environment.apiUrl + 'subreddits/' + subreddit)
         .subscribe(reddits => {
             this.redditService.setSubreddits(reddits);
         });

@@ -1,0 +1,9 @@
+<div class="form-container">
+    <mat-form-field>
+      <mat-label>Subreddit</mat-label>
+      <input matInput class="test" placeholder="Ex. News" id="subreddit" name="subreddit" [(ngModel)]="subreddit">
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" id="search" (click)="onSearch()">Search</button>
+    </mat-card-actions>
+  </div>
